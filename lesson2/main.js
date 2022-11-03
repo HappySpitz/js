@@ -1,6 +1,15 @@
 //- Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
 let arr = [];
-arr = ['black', 12, 'grey', 69, true, 'blue', 'yellow', 'brown', 666, 'purple']
+arr[0] = 1;
+arr[1] = 'black';
+arr[2] = 'pink';
+arr[3] = false;
+arr[4] = 35;
+arr[5] = 666;
+arr[6] = 'red';
+arr[7] = 'brown';
+arr[8] = 11;
+arr[9] = 'yellow';
 console.log(arr);
 
 //- Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.
