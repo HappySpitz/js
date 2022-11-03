@@ -1,15 +1,7 @@
 //- Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
-let arr = ['black', 12, 'grey', 69, true, 'blue', 'yellow', 'brown', 666, 'purple'];
-console.log(arr [0]);
-console.log(arr [1]);
-console.log(arr [2]);
-console.log(arr [3]);
-console.log(arr [4]);
-console.log(arr [5]);
-console.log(arr [6]);
-console.log(arr [7]);
-console.log(arr [8]);
-console.log(arr [9]);
+let arr = [];
+arr = ['black', 12, 'grey', 69, true, 'blue', 'yellow', 'brown', 666, 'purple']
+console.log(arr);
 
 //- Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.
 let book1 = {title: '11/22/63', pageCount: 976, genre: 'Science fiction'};
@@ -22,14 +14,14 @@ let book4 = {
     title: 'Influence: Science and Practice',
     pageCount: 352,
     genre: 'Self-help book',
-    authors: {name: 'Robert B. Cialdini', age: 77}
+    authors: [{name: 'Robert B. Cialdini', age: 77}]
 };
-let book5 = {title: 'Carrie', pageCount: 224, genre: 'Horror', authors: {name: 'Stephen King', age: 75}};
+let book5 = {title: 'Carrie', pageCount: 224, genre: 'Horror', authors: [{name: 'Stephen King', age: 75}]}
 let book6 = {
     title: 'Harry Potter and the Philosopher\'s Stone',
     pageCount: 223,
     genre: 'Fantasy',
-    authors: {name: 'Joanne Rowling', age: 57}
+    authors: [{name: 'Joanne Rowling', age: 57}]
 };
 console.log(book4, book5, book6);
 
