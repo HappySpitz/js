@@ -95,10 +95,12 @@
 //- створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 
 //function list(arr) {
+//    document.write(`<ul>`)
 //    for (const arrElement of arr) {
-//        console.log(arrElement)
+//        document.write(`<li>${arrElement}</li>`)
 //    }
-//    console.log(`-------------`)
+//    document.write(`</ul>`)
+//    document.write(`-------------`)
 //}
 //let array = ['mother', 5, true, 67, 'what', 1, 0, 'hello', false, 'puppy'];
 //let c = ['mother', 5, true, 67, 'what'];
