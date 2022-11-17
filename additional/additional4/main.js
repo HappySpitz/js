@@ -147,30 +147,29 @@
 //    [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ name, age, model ]
 
 //let a = [{name: 'Dima', age: 13}, {model: 'Camry'}];
-//let b = [];
-//let arrKey = function (array, newArr) {
-//    for (arr of array) {
-//        for (let key in arr) {
-//            let newArr = [key]
-//            console.log(newArr)
+//let arrKey = function (array) {
+//    let newArr = [];
+//    for (let i = 0, j = 0; i < array.length; i++) {
+//        for (let key in array[i]) {
+//           newArr[j++] = key;
 //        }
 //    } return newArr
 //}
-//arrKey(a, b)
+//arrKey(a)
+//console.log(arrKey(a))
 
 //    - Створити функцію яка приймає масив будь яких объектів, та повертає масив значень всіх обєктів
 //EXAMPLE:
 //    [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ Dima, 13, Camry ]
 
 //let a = [{name: 'Dima', age: 13}, {model: 'Camry'}];
-//let b = [];
-//let arrKey = function (array, newArr) {
-//    for (arr of array) {
-//        for (let key in arr) {
-//            let newArr = [arr[key]];
-//            console.log(newArr)
+//let arrKey = function (array) {
+//    let newArr = [];
+//    for (let i = 0, j = 0; i < array.length; i++) {
+//        for (let key in array[i]) {
+//           newArr[j++] = array[i][key];
 //        }
 //    } return newArr
 //}
-//let abc = arrKey(a, b)
-
+//arrKey(a)
+//console.log(arrKey(a))
