@@ -47,9 +47,9 @@
 //const arithmeticMean = function (array) {
 //    let count = 0;
 //    for (arr of array) {
-//        count += arr/array.length
+//        count += arr
 //    }
-//    return count
+//    return count/array.length
 //}
 //let arithmeticMean1 = arithmeticMean(a);
 //console.log(arithmeticMean1)
