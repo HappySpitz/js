@@ -40,8 +40,7 @@
 //- Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів
 
 //let str = ' dirty string   ';
-//str.replace(' ', '');
-//console.log(str)
+//console.log(str.trim());
 
 //- Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
 //    let str = 'Ревуть воли як ясла повні';
@@ -65,21 +64,18 @@
 //sortNums(nums,'ascending') // [3,11,21]
 //sortNums(nums,'descending') // [21,11,3]
 
-//let nums1 = [11,21,3];
-//let nums = [11,21,3];
-//let sortNums = function(array, direction) {
+//let nums = [11, 21, 3];
+//let sortNums = function (array, direction) {
 //    if (direction === 'ascending') {
 //        array.sort((a, b) => a - b)
-//    }
-//    else if(direction === 'descending') {
+//    } else if (direction === 'descending') {
 //        array.sort((a, b) => b - a)
 //    }
+//    console.log(array);
+//    return array
 //}
-//sortNums(nums1, 'ascending');
-//sortNums(nums,'descending')
-//console.log(nums1)
-//console.log(nums)
-
+//sortNums(nums, 'ascending');
+//sortNums(nums, 'descending')
 
 //- є масив
 
