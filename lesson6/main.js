@@ -100,7 +100,7 @@
 
 //-- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
 
-//let filter = coursesAndDurationArray.filter((cours) => cours.monthDuration > 5);
+//let filter = coursesAndDurationArray.filter(cours => cours.monthDuration > 5);
 //console.log(filter);
 
 //описати колоду карт
