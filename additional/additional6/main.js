@@ -111,12 +111,13 @@
 // Своїм мозком подумайте над протоколом, з регулярками будете потім бавитись.
 
 //function validator(email) {
-//    let dataValid1 = email.lastIndexOf('@');
-//    let dataValid2 = email.lastIndexOf('.');
+//    let email1 = email.toUpperCase();
+//    let dataValid1 = email1.lastIndexOf('@');
+//    let dataValid2 = email1.lastIndexOf('.');
 //    return dataValid1 > 0 &&
 //        (
 //            dataValid2 > dataValid1 + 2 &&
-//            dataValid2 < email.length - 1
+//            dataValid2 < email1.length - 1
 //        )
 //}
 //let e1 = 'someemail@gmail.com';
@@ -231,7 +232,7 @@
 //document.writeln(cutString(str, 5)) // 'Сила тяжести приложена к центру'
 
 //let str = "Сила тяжести приложена к центру масс тела";
-//let cutSrting = (str, n) => str.split(' ').splice(0, 5).join(' ');
+//let cutSrting = (str, n) => str.split(' ').splice(0, n).join(' ');
 //console.log(cutSrting(str, 5));
 
 //-стоврити масив книжок (назва, кількість сторінок, автори , жанри).
