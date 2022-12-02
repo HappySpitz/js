@@ -351,11 +351,10 @@
 //    Вывод: наибольший и наименьший индекс в массиве заданного элемента. Если такого элемента нет в массиве, выведите -1.
 
 //Пример:
-//    Arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14]
-//1. Key = 1
-//Answer: MinIndex = 0, MaxIndex = 0.
-//2. Key = 4
-//Answer: MinIndex = 3, MaxIndex = 6.
 
+let arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9];
+let index = (arr, key) => 'MinIndex = ' + arr.indexOf(key) + ' ' + ' ' + 'MaxIndex = ' + arr.lastIndexOf(key);
+console.log(index(arr, 4));
+console.log(index(arr, 6));
 
 
