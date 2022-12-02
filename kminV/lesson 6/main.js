@@ -92,19 +92,19 @@
 
 //3) Все робити тільки за допомогою методів масивів!
 //    Дано масив :
-    const users = [
-        {name: 'vasya', age: 31, isMarried: false},
-        {name: 'petya', age: 30, isMarried: true},
-        {name: 'kolya', age: 29, isMarried: true},
-        {name: 'olya', age: 28, isMarried: false},
-        {name: 'max', age: 30, isMarried: true},
-        {name: 'anya', age: 31, isMarried: false},
-        {name: 'oleg', age: 28, isMarried: false},
-        {name: 'andrey', age: 29, isMarried: true},
-        {name: 'masha', age: 30, isMarried: true},
-        {name: 'olya', age: 31, isMarried: false},
-        {name: 'max', age: 31, isMarried: true}
-    ];
+   //const users = [
+   //    {name: 'vasya', age: 31, isMarried: false},
+   //    {name: 'petya', age: 30, isMarried: true},
+   //    {name: 'kolya', age: 29, isMarried: true},
+   //    {name: 'olya', age: 28, isMarried: false},
+   //    {name: 'max', age: 30, isMarried: true},
+   //    {name: 'anya', age: 31, isMarried: false},
+   //    {name: 'oleg', age: 28, isMarried: false},
+   //    {name: 'andrey', age: 29, isMarried: true},
+   //    {name: 'masha', age: 30, isMarried: true},
+   //    {name: 'olya', age: 31, isMarried: false},
+   //    {name: 'max', age: 31, isMarried: true}
+   //];
 //a) відсортувати його за  віком (зростання , а потім окремо спадання)
 
 //console.log(users.sort(function (a, b) {
@@ -133,19 +133,22 @@
 // (По якому принципу його створювати - ваше рішення),
 //та зберегти це в новий масив (первинний масив залишиться без змін)
 
-let newArray = [];
-newArray.push(users.map((value, index) =>
-    ({id: index + 1, name: value.name, age: value.age, isMarried: value.isMarried})));
-console.log(newArray);
+//let map = (users.map((value, index) => ({...value, id: index + 1})));
+//let newArray = [...map];
+//console.log(map);
 
 //d) відсортувати його за індентифікатором
 
-let sort = newArray.sort(function (a, b) {
-    return b.id - a.id
-});
-console.log(sort);
+//let sort = newArray.sort(function (a, b) {
+//    return b.id - a.id
+//});
+//console.log(sort);
 
 //e) Всі хто одружений мають попасти у новий масив та отрмати квартиру (reduce)
+
+//let reduce = users.reduce((acc, value, index) =>
+//    (value.isMarried) ? [...acc, {...value, flat: index + 1}] : acc,[])
+//console.log(reduce);
 
 //______________________________________________________________________________________________________________________________________________________
 //РОБОТА В АУДИТОРІЇ
@@ -164,24 +167,59 @@ console.log(sort);
 //    {producer:"bmw",model: "650",year: 2009, color:"black",type: "coupe",engine: "f60",volume: 6,power: 350},
 //    {producer:"bmw",model: "320",year: 2012, color:"red",type: "sedan",engine: "f20",volume: 2,power: 180},
 //    {producer:"mercedes",model: "e200",year: 1990, color:"silver",type: "sedan",engine: "eng200",volume: 2,power: 180},
-//    {producer:"mercedes",model: "e63",year 2017, color:"yellow",type: "sedan",engine: "amg63",volume:3,power: 400},
+//    {producer:"mercedes",model: "e63",year: 2017, color:"yellow",type: "sedan",engine: "amg63",volume:3,power: 400},
 //    {producer:"mercedes",model: "c250",year: 2017, color:"red",type: "sedan",engine: "eng25",volume: 2.5,power: 230}
 //];
 
 //Відфільтрувати масив за наступними крітеріями :
 //    - двигун більше 3х літрів
+
+//console.log(cars.filter(value => value.volume > 3));
+
 //- двигун = 2л
+
+//console.log(cars.filter(value => value.volume === 2));
+
 //- виробник мерс
+
+//console.log(cars.filter(value => value.producer === 'mercedes'));
+
 //- двигун більше 3х літрів + виробник мерседес
+
+//console.log(cars.filter(value => (value.volume > 3) && (value.producer === 'mercedes')));
+
 //- двигун більше 3х літрів + виробник субару
+
+//console.log(cars.filter(value => (value.volume > 3) && (value.producer === 'subaru')));
+
 //- сили більше ніж 300
+
+//console.log(cars.filter(value => value.power > 300));
+
 //- сили більше ніж 300 + виробник субару
+
+//console.log(cars.filter(value => (value.power > 300) && (value.producer === 'subaru')));
+
 //- мотор серіі ej
+
+//console.log(cars.filter(value => (value.engine).includes('ej')));
+
 //- сили більше ніж 300 + виробник субару + мотор серіі ej
+
+//console.log(cars.filter(value =>
+//    (value.power > 300) && (value.producer === 'subaru') && ((value.engine).includes('ej'))));
+
 //- двигун меньше 3х літрів + виробник мерседес
+
+//console.log(cars.filter(value => (value.volume < 3) && (value.producer === 'mercedes')));
+
 //- двигун більше 2л + сили більше 250
+
+//console.log(cars.filter(value => (value.volume > 2) && (value.power > 250)));
+
 //- сили більше 250  + виробник бмв
 
+//console.log(cars.filter(value => (value.power > 250) && (value.producer === 'bmw')));
 
 //- взять слдующий массив
 //const usersWithAddress = [
@@ -199,19 +237,96 @@ console.log(sort);
 //];
 
 //-- Відсортувати їх по ID
+
+//let sort = usersWithAddress.sort(function (a, b) {
+//    return a.id - b.id
+//});
+//console.log(sort);
+
 //-- Відсортувати їх по ID в зворотньому порядку
+
+//let sort = usersWithAddress.sort(function (a, b) {
+//    return b.id - a.id
+        //});
+//console.log(sort);
+
 //-- Відсортувати по віку
+
+//let sort = usersWithAddress.sort(function (a, b) {
+//    return a.age - b.age
+//});
+//console.log(sort);
+
 //-- Відсортувати по віку в зворотньому порядку
+
+//let sort = usersWithAddress.sort(function (a, b) {
+//    return b.age - a.age
+//});
+//console.log(sort);
+
 //-- Відсорутвати по імені
+
+//console.log(usersWithAddress.sort(function (a, b) {
+//    if (a.name < b.name) {
+//        return -1
+//    }
+//    if (a.name > b.name) {
+//        return 1
+//    }
+//    if (a.name === b.name) {
+//        return 0
+//    }
+//}))
+
 //-- Відсорутвати по назві вулиці
+
+//console.log(usersWithAddress.sort(function (a, b) {
+//    if (a.address.street < b.address.street) {
+//        return -1
+//    }
+//    if (a.address.street > b.address.street) {
+//        return 1
+//    }
+//    if (a.address.street === b.address.street) {
+//        return 0
+//    }
+//}))
+
 //-- Відсорутвати по номеру будинку
+
+//console.log(usersWithAddress.sort(function (a, b) {
+//    return a.address.number - b.address.number
+//}))
+
 //-- Залигити тільки тих, хто молодший ніж 30 (filter)
+
+//console.log(usersWithAddress.filter(value => value.age < 30));
+
 //-- Залишити тільки одружених
+
+//console.log(usersWithAddress.filter(value => value.isMarried));
+
 //-- Залишити тільки одружених, які молодні за 30
+
+//console.log(usersWithAddress.filter(value => (value.isMarried) && (value.age < 30)));
+
 //-- Залишити лише тих, в кого парні номери будинків.
+
+//console.log(usersWithAddress.filter(value => value.address.number % 2 === 0));
+
 //-- Порахувати загальний вік всіх людей. (reduce)
+
+//let reduce = usersWithAddress.reduce(function (a, b) {
+//    return a.age + b.age
+//})
+//console.log(reduce);
+
 //-- Ті, хто одружений і старий за 30 має отримати обєкти child і попасти в новий масив (reduce)
 
+//let reduce = usersWithAddress.reduce((acc, value, index) =>
+//    (value.isMarried) && (value.age < 30) ? [...acc, {...value, child: index + 1}] : acc
+//,[])
+//console.log(reduce);
 
 //______________________________________________________________________________________________________________________________________________________
 //Додатково
@@ -219,8 +334,7 @@ console.log(sort);
 
 //Створити обєкт автомобіля з полями:
 //    Марка автомобля, потужність двигуна, власник, ціна, рік випуску.
-//    Власник автомобіля теж має бути обєкт, у якого є поля
-//Імя, вік, стаж водіння.
+//    Власник автомобіля теж має бути обєкт, у якого є поля Імя, вік, стаж водіння.
 //    Створити не менше 7 та не більше 20 машинок.
 //    Для початку вкладіть всі наші створені автомобілі в масив cars.
 //    Зробили половину автопарку ремонт мотору, що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
@@ -242,3 +356,6 @@ console.log(sort);
 //Answer: MinIndex = 0, MaxIndex = 0.
 //2. Key = 4
 //Answer: MinIndex = 3, MaxIndex = 6.
+
+
+
