@@ -240,74 +240,60 @@
 //
 //    let id = document.createElement('div');
 //    id.innerText = (`${user.id}`)
-//    document.body.append(id);
 //
 //    let name = document.createElement('div');
 //    name.innerText = (`${user.name}`)
-//    document.body.append(name);
 //
 //    let username = document.createElement('div');
 //    username.innerText = (`${user.username}`)
-//    document.body.append(username);
 //
 //    let email = document.createElement('div');
 //    email.innerText = (`${user.email}`)
-//    document.body.append(email);
 //
 //    let address = document.createElement('div');
-//    address.classList.add('address-user')
-//    document.body.append(address);
 //
 //    let addressStreet = document.createElement('div');
 //    addressStreet.innerText = (`${user.address.street}`)
-//    address.append(addressStreet);
 //
 //    let addressSuite = document.createElement('div');
 //    addressSuite.innerText = (`${user.address.suite}`)
-//    address.append(addressSuite);
 //
 //    let addressCity = document.createElement('div');
 //    addressCity.innerText = (`${user.address.city}`)
-//    address.append(addressCity);
 //
 //    let addressZipcode = document.createElement('div');
 //    addressZipcode.innerText = (`${user.address.zipcode}`)
-//    address.append(addressZipcode);
 //
 //    let addressGeo = document.createElement('div');
 //    addressGeo.classList.add('geo')
-//    address.append(addressGeo);
 //
 //    let addressGeoLat = document.createElement('div');
 //    addressGeoLat.innerText = (`${user.address.geo.lat}`)
-//    addressGeo.append(addressGeoLat);
 //
 //    let addressGeoLng = document.createElement('div');
 //    addressGeoLng.innerText = (`${user.address.geo.lng}`)
-//    addressGeo.append(addressGeoLng);
 //
 //    let phone = document.createElement('div');
 //    phone.innerText = (`${user.phone}`)
-//    document.body.append(phone);
 //
 //    let website = document.createElement('div');
 //    website.innerText = (`${user.website}`)
-//    document.body.append(website);
 //
 //    let company = document.createElement('div');
-//    document.body.append(company);
 //
 //    let companyName = document.createElement('div');
 //    companyName.innerText = (`${user.company.name}`)
-//    company.append(companyName);
 //
 //    let companyCatchPhrase = document.createElement('div');
 //    companyCatchPhrase.innerText = (`${user.company.catchPhrase}`)
-//    company.append(companyCatchPhrase);
 //
 //    let companyBs = document.createElement('div');
 //    companyBs.innerText = (`${user.company.bs}`)
-//    company.append(companyBs);
+//
+//    document.body.append(id, name, username, email, address, phone, website, company);
+//    address.append(addressStreet, addressSuite, addressCity, addressZipcode, addressGeo);
+//    addressGeo.append(addressGeoLat, addressGeoLng);
+//    company.append(companyName, companyCatchPhrase, companyBs)
 //}
 
 //------
