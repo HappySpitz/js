@@ -52,10 +52,7 @@ fetch('https://jsonplaceholder.typicode.com/posts/' + id)
                     comments.classList.add('boxComments')
                     for (const info in valueComments) {
                         const divInfo = document.createElement('div');
-                        if (typeof valueComments[info] !== 'object') {
-                            divInfo.innerText = `${info}: ${valueComments[info]}`
-                        } else {
-                            for (const key in valueComments[info]) {
+                        for (const key in valueComments[info]) {
                                 if (key === 'body') {
                                     const divInfoKey = document.createElement('div');
                                     divInfoKey.classList.add('comment')
@@ -67,7 +64,6 @@ fetch('https://jsonplaceholder.typicode.com/posts/' + id)
                             }
                         }
                         div.append(comments)
-                    }
                 })
         }
         })

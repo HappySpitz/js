@@ -54,29 +54,26 @@ fetch('http://jsonplaceholder.typicode.com/users/' + id)
                     for (const item in value) {
                         const divItem = document.createElement('div');
                         divItem.classList.add('post')
-                       if (typeof value[item] !== 'object') {
-                           divItem.innerText = `${item} -- ${value[item]}`
-                       } else {
-                           for (const key in value[item]) {
-                               if (typeof value[item][key] !== 'object') {
-                                      if (key === 'title') {
-                                          let divKey = document.createElement('p')
-                                          divKey.innerText = `Title: ${value[item][key]}`;
-                                          divItem.append(divKey)
-                                      }
-                                   if (key === 'id') {
-                                       let a = document.createElement('a');
-                                       a.classList.add('link')
-                                       a.innerText = '=> post-info <=';
-                                       id = `${value[item][key]}`;
-                                       a.href = 'post_details.html?id=' + id;
-                                       divItem.append(a);
-                                   }
-                               }
-                               posts.appendChild(divItem)
-                           }
-                       }
-                    } div.append(posts)
+                            for (const key in value[item]) {
+                                if (typeof value[item][key] !== 'object') {
+                                    if (key === 'title') {
+                                        let divKey = document.createElement('p')
+                                        divKey.innerText = `Title: ${value[item][key]}`;
+                                        divItem.append(divKey)
+                                    }
+                                    if (key === 'id') {
+                                        let a = document.createElement('a');
+                                        a.classList.add('link')
+                                        a.innerText = '=> post-info <=';
+                                        id = `${value[item][key]}`;
+                                        a.href = 'post_details.html?id=' + id;
+                                        divItem.append(a);
+                                    }
+                                }
+                                posts.appendChild(divItem)
+                            }
+                        }
+                    div.append(posts)
                 })
         }
     })
