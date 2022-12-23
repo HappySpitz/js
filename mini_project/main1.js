@@ -51,28 +51,18 @@ fetch('http://jsonplaceholder.typicode.com/users/' + id)
                 .then(value => {
                     const posts = document.createElement('div');
                     posts.classList.add('boxPosts')
-                    for (const item in value) {
-                        const divItem = document.createElement('div');
-                        divItem.classList.add('post')
-                            for (const key in value[item]) {
-                                if (typeof value[item][key] !== 'object') {
-                                    if (key === 'title') {
-                                        let divKey = document.createElement('p')
-                                        divKey.innerText = `Title: ${value[item][key]}`;
-                                        divItem.append(divKey)
-                                    }
-                                    if (key === 'id') {
-                                        let a = document.createElement('a');
-                                        a.classList.add('link')
-                                        a.innerText = '=> post-info <=';
-                                        id = `${value[item][key]}`;
-                                        a.href = 'post_details.html?id=' + id;
-                                        divItem.append(a);
-                                    }
-                                }
-                                posts.appendChild(divItem)
-                            }
-                        }
+                        for (const item of value) {
+                            const divItem = document.createElement('div');
+                            divItem.classList.add('post');
+                            divItem.innerText = `Post: ${item.title}`;
+                            const a = document.createElement('a');
+                            a.classList.add('link');
+                            a.innerText = '=> post-info <=';
+                            id = `${item.id}`
+                            a.href = 'post_details.html?id=' + id;
+                            divItem.append(a);
+                            posts.append(divItem)
+                    }
                     div.append(posts)
                 })
         }

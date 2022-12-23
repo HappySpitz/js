@@ -50,22 +50,15 @@ fetch('https://jsonplaceholder.typicode.com/posts/' + id)
                 .then(valueComments => {
                     const comments = document.createElement('div');
                     comments.classList.add('boxComments')
-                    for (const info in valueComments) {
+                    for (const info of valueComments) {
                         const divInfo = document.createElement('div');
-                        for (const key in valueComments[info]) {
-                                if (key === 'body') {
-                                    const divInfoKey = document.createElement('div');
-                                    divInfoKey.classList.add('comment')
-                                    if (typeof valueComments[info][key] !== 'object') {
-                                        divInfoKey.innerText = `Comment: ${valueComments[info][key]}`
-                                    }
-                                    comments.append(divInfo, divInfoKey)
-                                }
-                            }
-                        }
-                        div.append(comments)
+                        divInfo.classList.add('comment');
+                        divInfo.innerText = `Comment: ${info.body}`
+                        comments.append(divInfo)
+                    }
+                    div.append(comments)
                 })
         }
-        })
+    })
 container.append(h1, div);
 document.body.append(container)

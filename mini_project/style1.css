@@ -56,6 +56,9 @@
     width: 19%;
     height: 195px;
     background: #deccbe;
+    display: flex;
+    justify-content: start;
+    flex-direction: column-reverse;
     box-sizing: border-box;
     margin: 5px;
     padding: 25px;
@@ -67,4 +70,6 @@
 }
 .link {
     color: #4a5056;
+    box-sizing: border-box;
+    margin-bottom: 15px;
 }
