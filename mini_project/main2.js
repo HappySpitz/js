@@ -53,8 +53,9 @@ fetch('https://jsonplaceholder.typicode.com/posts/' + id)
                     for (const info of valueComments) {
                         const divInfo = document.createElement('div');
                         divInfo.classList.add('comment');
-                        divInfo.innerText = `Comment: ${info.body}`
-                        comments.append(divInfo)
+                        divInfo.innerText = `Comment: ${info.body}`;
+                        comments.append(divInfo);
+                        buttonComments.disabled = true;
                     }
                     div.append(comments)
                 })

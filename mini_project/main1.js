@@ -62,6 +62,7 @@ fetch('http://jsonplaceholder.typicode.com/users/' + id)
                             a.href = 'post_details.html?id=' + id;
                             divItem.append(a);
                             posts.append(divItem)
+                            button.disabled = true
                     }
                     div.append(posts)
                 })
