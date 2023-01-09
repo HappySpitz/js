@@ -352,9 +352,8 @@
 
 //Пример:
 
-let arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9];
-let index = (arr, key) => 'MinIndex = ' + arr.indexOf(key) + ' ' + ' ' + 'MaxIndex = ' + arr.lastIndexOf(key);
-console.log(index(arr, 4));
-console.log(index(arr, 6));
-
+//let arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9];
+//let index = (arr, key) => 'MinIndex = ' + arr.indexOf(key) + ' ' + ' ' + 'MaxIndex = ' + arr.lastIndexOf(key);
+//console.log(index(arr, 4));
+//console.log(index(arr, 6));
 
