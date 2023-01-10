@@ -15,30 +15,26 @@ let users = [
 //створити під кожен об'єкт свій блок з кнопкою "додати до улюблених" при натисканні на яку об'єкт потрапляє до масиву favorites улюблених обраних об'єктів в локальному сховищі.
 //Створити сторніку favorites.html при переході на яку потрібно вивест в документ всіх обраних на попередньому етапі.
 
-let favoritesUsers = [];
-
 const userBoxDiv = document.createElement('div');
 
 for (const user of users) {
     const div = document.createElement('div')
     const userDiv = document.createElement('div');
     userDiv.innerText = `${user.name} -- ${user.age} -- ${user.status} `;
-    const button = document.createElement('button');
+    let button = document.createElement('button');
     button.innerText = 'add to favorites';
-    button.onclick = () => {
-            localStorage.setItem('favorites', JSON.stringify(user));
-            const value = localStorage.getItem('favorites');
-            favoritesUsers.push(JSON.parse(value));
-        for (const favoritesUser of favoritesUsers) {
-            const ul = document.createElement('ul');
-            const li = document.createElement('li');
-            li.innerText = `${favoritesUser.name} -- ${favoritesUser.age} -- ${favoritesUser.status}`;
-            ul.appendChild(li);
-            document.body.appendChild(ul)
-        }
+    button.onclick = function () {
+        let favoritesUsers = JSON.parse(localStorage.getItem('favorites')) || [];
+        favoritesUsers.push(user);
+        localStorage.setItem('favorites', JSON.stringify(favoritesUsers));
+        button.disabled = true;
     }
     div.append(userDiv, button)
     userBoxDiv.append(div)
 }
 
-document.body.appendChild(userBoxDiv)
+const a = document.createElement('a');
+a.href = 'favorites.html';
+a.innerText = 'to favorites users';
+
+document.body.append(userBoxDiv, a)
