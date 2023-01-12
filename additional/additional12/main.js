@@ -10,15 +10,19 @@
 //На сторінці  list.html побудувати кнопку яка видаляє всі товари з корзини та локалстораджа.
 //    До кожного товару додати кнопку, при кліку на яку з лс видаляється конкретний  обраний  товар
 
-const goodsFood = document.getElementsByClassName('goodsFood');
-for (const goodsFoodElement of goodsFood) {
-    const buttons = document.getElementsByClassName('btn');
-    for (const button of buttons) {
-        button.onclick = () => {
-            const favoritesGoods = JSON.parse(localStorage.getItem('favoritesGoods')) || [];
-            favoritesGoods.push(goodsFoodElement);
-            localStorage.setItem('favoritesGoods', JSON.stringify(favoritesGoods))
-            console.log(favoritesGoods);
-        }
+const goods = document.forms.goods;
+
+goods.btn.onclick = () => {
+    const goodsInfo = [];
+    const arrayGoods = JSON.parse(localStorage.getItem('favoritesGoods')) || [];
+    goodsInfo.push(goods.name.value, goods.amount.value, goods.price.value, goods.img.value);
+    arrayGoods.push(goodsInfo);
+    localStorage.setItem('favoritesGoods', JSON.stringify(arrayGoods));
+}
+
+goods.onsubmit = function (evt) {
+    if ((goods.name.value === "") || (goods.amount.value === "") || (goods.price.value === "") || (goods.img.value === "")) {
+        evt.preventDefault();
+        alert('stop!')
     }
 }
