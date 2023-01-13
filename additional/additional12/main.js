@@ -13,10 +13,8 @@
 const goods = document.forms.goods;
 
 goods.btn.onclick = () => {
-    const goodsInfo = [];
     const arrayGoods = JSON.parse(localStorage.getItem('favoritesGoods')) || [];
-    goodsInfo.push(goods.name.value, goods.amount.value, goods.price.value, goods.img.value);
-    arrayGoods.push(goodsInfo);
+    arrayGoods.push({name: goods.name.value, amount: goods.amount.value, price: goods.price.value, img: goods.img.value});
     localStorage.setItem('favoritesGoods', JSON.stringify(arrayGoods));
 }
 

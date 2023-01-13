@@ -4,23 +4,23 @@ document.body.appendChild(h2);
 
 const div = document.createElement('div');
 
-const arrayGoods = JSON.parse(localStorage.getItem('favoritesGoods'));
+const arrayGoods = JSON.parse(localStorage.getItem('favoritesGoods')) || [];
 
 for (const arrayGood of arrayGoods) {
 
     const divGoods = document.createElement('div');
 
     const nameDiv = document.createElement('div');
-    nameDiv.innerText = `Name: ${arrayGood[0]}`;
+    nameDiv.innerText = `Name: ${arrayGood.name}`;
 
     const amountDiv = document.createElement('div');
-    amountDiv.innerText = `Amount: ${arrayGood[1]}`;
+    amountDiv.innerText = `Amount: ${arrayGood.amount}`;
 
     const priceDiv = document.createElement('div');
-    priceDiv.innerText = `Price: ${arrayGood[2]} UAN`;
+    priceDiv.innerText = `Price: ${arrayGood.price} UAN`;
 
     const img = document.createElement('img');
-    img.src = `${arrayGood[3]}`;
+    img.src = `${arrayGood.img}`;
     img.style.width = '200px';
 
     const button = document.createElement('button');
@@ -30,8 +30,9 @@ for (const arrayGood of arrayGoods) {
     button.onclick = () => {
         function deleteGood(value) {
             const newArr = arrayGoods.filter(element => element !== value);
-            localStorage.clear();
-            localStorage.setItem('favoritesGoods', JSON.stringify(newArr))
+            localStorage.setItem('favoritesGoods', JSON.stringify(newArr));
+            divGoods.style.display = 'none';
+            button.style.display = 'none';
         }
         deleteGood(arrayGood)
     }
