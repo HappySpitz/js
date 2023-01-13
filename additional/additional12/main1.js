@@ -44,12 +44,23 @@ for (const arrayGood of arrayGoods) {
     document.body.appendChild(div)
 
 }
+const empty = () => {
+    const h4 = document.createElement('h4');
+    h4.innerText = 'List is empty';
+    document.body.appendChild(h4)
+}
 
 const clearButton = document.createElement('button');
 clearButton.innerText = 'clear';
 clearButton.onclick = () => {
     div.style.display = 'none';
+    clearButton.style.display = 'none';
     localStorage.clear()
+    empty()
 }
 
-document.body.appendChild(clearButton)
+div.appendChild(clearButton);
+
+if (!arrayGoods.length) {
+    empty()
+}
