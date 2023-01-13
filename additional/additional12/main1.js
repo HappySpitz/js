@@ -46,7 +46,6 @@ for (const arrayGood of arrayGoods) {
 }
 
 const clearButton = document.createElement('button');
-clearButton.classList.add('clear')
 clearButton.innerText = 'clear';
 clearButton.onclick = () => {
     div.style.display = 'none';
